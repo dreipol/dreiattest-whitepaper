@@ -1,6 +1,5 @@
 # Key Endpoints
-## /dreiattest/nonce
-Method: GET  
+## GET /dreiattest/nonce
 Headers (in addition to the [common headers](common_headers.md)):  
 > "Dreiattest-uid": "hello@example.com;123e4567-e89b-12d3-a456-426614174000"  
 
@@ -9,8 +8,7 @@ e.g. "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
 
 Get a nonce (snonce) for registering a key. Only one nonce per uid can be valid at a given point in time. The mobile libraries, therefore, have to ensure that a key is only generated and registered once even when multiple requests are initiated at the same time.
 
-## /dreiattest/key
-Method: POST  
+## POST /dreiattest/key
 Headers (in addition to the [common headers](common_headers.md)):  
 > "Dreiattest-uid": "hello@example.com;123e4567-e89b-12d3-a456-426614174000"  
 > "Dreiattest-nonce": "<snonce>"  
@@ -44,8 +42,7 @@ Status: 403
 Headers:  
 > "Dreiattest-error": Error Key  
 
-## /dreiattest/key
-Method: DELETE  
+## DELETE /dreiattest/key
 Headers (in addition to the [common headers](common_headers.md)):  
 > "Dreiattest-uid": "hello@example.com;123e4567-e89b-12d3-a456-426614174000"  
 > "Dreiattest-nonce": "<snonce>" // or 0000… if signOnly is used  
