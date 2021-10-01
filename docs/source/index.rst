@@ -44,7 +44,7 @@ Contents
    key_registration
    key_endpoints
    service_requests
-   parameters
+   configuration
    common_headers
    error_codes
    bypass
