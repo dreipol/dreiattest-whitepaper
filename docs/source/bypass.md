@@ -1,1 +1,2 @@
 # Bypass
+Since DeviceCheck / SafetyNet is not available on the simulator dreiAttest can be bypassed using a shared secret during development. This shared secret is passed to the view decorator using the `Dreiattest-Shared-Secret` header.

@@ -35,22 +35,22 @@ end
 Service requests are automatically signed by dreiAttest. The signature is added to the request as a header. Additionally the view decorator requires the uid and and the nonce that was used so it can verify the signature. The corresponding headers are added before the signature is generated, i.e. they are also signed.
 
 Headers (in addition to the [common headers](common_headers.md)):
-> “Dreiattest-uid”: “hello@example.com;123e4567-e89b-12d3-a456-426614174000”  
-> “Dreiattest-nonce”: “00000000-0000-0000-0000-000000000000”  
-> “Dreiattest-signature”: sign(requestHash :: snonce),  
+> "Dreiattest-uid": "hello@example.com;123e4567-e89b-12d3-a456-426614174000"  
+> "Dreiattest-nonce": "00000000-0000-0000-0000-000000000000"  
+> "Dreiattest-signature": sign(requestHash :: snonce),  
 >> with requestHash = sha256(<request_url> :: <request_method> :: <request_headers_as_JSON (keys sorted alphabetically)> :: <request_body_data>)  
 
-> “Dreiattest-user-headers”: comma separated list of header names (e.g. “Accept,Cache-Control”)
+> "Dreiattest-user-headers": comma separated list of header names (e.g. "Accept,Cache-Control")
 
-For the signature only the headers specified in “Dreiattest-user-headers” are considered.
+For the signature only the headers specified in "Dreiattest-user-headers" are considered.
 
-If the validation is successful the request is forwarded to the service with the original uid (i.e. the part in front of the “;”) and it responds to the request.
+If the validation is successful the request is forwarded to the service with the original uid (i.e. the part in front of the ";") and it responds to the request.
 
 **Validation not successful:**
 
 Status: 403  
 Headers:
-> “Dreiattest-error”: Error Key
+> "Dreiattest-error": [Error Key](error_codes.md)
 
 ## Discussion
 Requests that do not match the specified url prefix (e.g. example.com/attested) are forwarded to the service directly.
