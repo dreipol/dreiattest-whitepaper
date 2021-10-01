@@ -53,7 +53,7 @@ For more information see:
 Headers (in addition to the [common headers](common_headers.md)):  
 > "Dreiattest-uid": "hello@example.com;123e4567-e89b-12d3-a456-426614174000"  
 > "Dreiattest-nonce": "<snonce>" // or 0000… if signOnly is used  
-> "Dreiattest-signature":  same as for service requests  
+> "Dreiattest-signature":  same as for [service requests](service_requests.html#specification)
 
 Body: empty
 
