@@ -8,5 +8,8 @@ sphinx = "*"
 myst-parser = "*"
 sphinxcontrib-mermaid = "*"
 
+[scripts]
+build = "bash -c 'cd docs && make html'"
+
 [requires]
 python_version = "3.8.0"
