@@ -11,8 +11,5 @@ The **validation level** can currently only be set to `signOnly`. In the future 
 When `signOnly` is set `00000000-0000-0000-0000-000000000000` is used instead of a nonce. During key registration a nonce is always requested independent of this setting.
 
 ## Server
-Different security policies can be implemented on the server through the use of plugins. dreiAttest supoorts 3 kinds of plugins:
+The server needs knowledge of the used App ID in case of Apple and the APK name as well as the APK certificate digest for google. There are more fine grained configuration possibilities described in the [django-dreiattest docs](https://github.com/dreipol/django-dreiattest).
 
-- **extended verifiers**: run additional checks on attestations before a key is registered (e.g. checking `ctsProfileMatch` on Android or the techniques described [here](https://developer.apple.com/documentation/devicecheck/assessing_fraud_risk) on iOS). All extended verifiers have to pass to register a key
-- **request verifiers**: additional verification when a request is received. All request verifiers have to pass before a request is forwarded to the service.
-- **sanitizers**: are given a chance to associate data with a key when it is registered and run regularly to evict keys and force a device to re-register the next time it connects.
