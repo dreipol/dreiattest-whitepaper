@@ -9,7 +9,7 @@ e.g. "BZsLqvMo1ayGJ+Y/BOdTHgrDQec8N015JuAUV9Uzptw="
 Get a nonce (snonce) for registering a key.
 
 **Discussion**  
-Only one nonce per uid can be valid at a given point in time. The mobile libraries, therefore, have to ensure that a key is only generated and registered once even when multiple requests are initiated at the same time. The nonce expires once it has been used or after a one minute.
+Only one nonce per uid can be valid at a given point in time. The mobile libraries, therefore, have to ensure that a key is only generated and registered once even when multiple requests are initiated at the same time. The nonce expires once it has been used or after one minute.
 
 ## POST /dreiattest/key
 Headers (in addition to the [common headers](common_headers.md)):  

@@ -1,6 +1,6 @@
 # Service Requests
 
-Service requests have to be signed using a [registered](key_registration.md) key pair. dreiAttest automatically intercepts requests that match a specified url prefix (e.g. example.com/attested) and adds the signature and other necessary information as HTTP headers. The server validates the signature and if this validation is successful it forwards the request to the view.
+Service requests have to be signed using a [registered](key_registration.md) key pair. dreiAttest automatically intercepts requests that match a specified url prefix (e.g. example.com/attested) and adds the signature and other necessary information as HTTP headers. The server validates the signature and only if this validation is successful it forwards the request to the view.
 
 To prevent replay-attacks dreiAttest will support obaining a nonce from the server in the future. Currently `00000000-0000-0000-0000-000000000000` is always used in place of the nonce. We recommend using SSL with certificate pinning to mitigate the risk of replay-attacks.
 

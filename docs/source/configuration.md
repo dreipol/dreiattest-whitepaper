@@ -13,3 +13,6 @@ When `signOnly` is set `00000000-0000-0000-0000-000000000000` is used instead of
 ## Server
 The server needs knowledge of the used App ID in case of Apple and the APK name as well as the APK certificate digest for google. There are more fine grained configuration possibilities described in the [django-dreiattest docs](https://github.com/dreipol/django-dreiattest).
 
+Different security policies can be implemented on the server through the use of "extended verifier" plugins.
+These run additional checks on attestations before a key is registered (e.g. checking `ctsProfileMatch` on Android or the techniques described [here](https://developer.apple.com/documentation/devicecheck/assessing_fraud_risk) on iOS). All extended verifiers have to pass to register a key.
+
