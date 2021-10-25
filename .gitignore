@@ -35,6 +35,7 @@ build
 ehthumbs.db
 Icon?
 Thumbs.db
+.idea
 
 # Editor backup files #
 #######################

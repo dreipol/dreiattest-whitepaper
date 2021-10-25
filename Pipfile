@@ -1,0 +1,15 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+sphinx = "*"
+myst-parser = "*"
+sphinxcontrib-mermaid = "*"
+
+[scripts]
+build = "bash -c 'cd docs && make html'"
+
+[requires]
+python_version = "3.8.0"
